@@ -1,0 +1,1 @@
+gcc main.c src/caricaDaFile.c src/inserisciOggetto.c
