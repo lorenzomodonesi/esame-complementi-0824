@@ -4,6 +4,7 @@
 #include "headers/oggetto.h"
 #include "headers/caricaDaFile.h"
 #include "headers/inserisciOggetto.h"
+#include "headers/visualizzaOggetti.h"
 
 #define MAX_OGGETTI 100
 
@@ -19,6 +20,7 @@ void menu() {
         printf("\nMenu:\n");
         printf("1. Inserisci oggetti da tastiera\n");
         printf("2. Carica oggetti da file\n");
+        printf("3. Visualizza oggetti\n");
         printf("0. Esci\n");
         printf("Scegli un'opzione: ");
         scanf("%d", &scelta);
@@ -33,6 +35,9 @@ void menu() {
                 break;
             case 2:
                 caricaDaFile(lista_oggetti, &n_oggetti, &capac);
+                break;
+            case 3:
+                visualizzaOggetti(lista_oggetti, n_oggetti);
                 break;
             case 0:
                 break;
