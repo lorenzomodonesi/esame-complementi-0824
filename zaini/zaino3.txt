@@ -1,0 +1,9 @@
+8 2200
+libro1 300 8
+libro2 220 7
+computer 1200 9
+tablet 800 5
+drone 1150 10
+casse 910 6
+tracolla 230 7
+libro3 150 9
