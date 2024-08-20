@@ -1,1 +1,1 @@
-gcc main.c src/caricaDaFile.c src/inserisciOggetto.c src/visualizzaOggetti.c
+gcc main.c src/caricaDaFile.c src/inserisciOggetto.c src/visualizzaOggetti.c src/trovaEstremi.c
