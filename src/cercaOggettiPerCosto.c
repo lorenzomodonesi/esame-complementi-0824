@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "../headers/oggetto.h"
 #include "../headers/cercaOggettiPerCosto.h"
+#include "../headers/aspettaEnter.h"
 
 void cercaOggettiPerCosto(struct oggetto lista_oggetti[], int n_oggetti) {
     int p;
@@ -17,4 +18,5 @@ void cercaOggettiPerCosto(struct oggetto lista_oggetti[], int n_oggetti) {
     if (!found) {
         printf("Nessun oggetto trovato con costo minore di %d.\n", p);
     }
+    aspettaEnter();
 }

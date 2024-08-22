@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "../headers/oggetto.h"
 #include "../headers/soluzioneUno.h"
+#include "../headers/aspettaEnter.h"
 
 // Funzione per ordinare gli oggetti per rapporto valore/costo
 void ordinaOggettiPerRapporto(struct oggetto lista_oggetti[], int n_oggetti) {
@@ -36,4 +37,5 @@ void soluzioneUno(struct oggetto lista_oggetti[], int n_oggetti, int capac) {
     if (capac_residua == capac) {
         printf("Nessun oggetto selezionato.\n");
     }
+    aspettaEnter();
 }

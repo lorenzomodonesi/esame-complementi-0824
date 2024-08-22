@@ -2,6 +2,7 @@
 #include <string.h>
 #include "../headers/oggetto.h"
 #include "../headers/cercaOggettoPerID.h"
+#include "../headers/aspettaEnter.h"
 
 void cercaOggettoPerID(struct oggetto lista_oggetti[], int n_oggetti) {
     char id[10];
@@ -15,4 +16,5 @@ void cercaOggettoPerID(struct oggetto lista_oggetti[], int n_oggetti) {
         }
     }
     printf("Oggetto non trovato.\n");
+    aspettaEnter();
 }

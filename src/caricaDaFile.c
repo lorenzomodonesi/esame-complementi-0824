@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "../headers/oggetto.h"
+#include "../headers/aspettaEnter.h"
 
 void caricaDaFile(struct oggetto lista_oggetti[], int *n_oggetti, int *capac) {
     char filename[50];
@@ -23,4 +24,5 @@ void caricaDaFile(struct oggetto lista_oggetti[], int *n_oggetti, int *capac) {
 
     fclose(file);
     printf("Dati caricati con successo.\n");
+    aspettaEnter();
 }
