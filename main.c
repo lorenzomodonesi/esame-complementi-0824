@@ -9,6 +9,7 @@
 #include "headers/cercaOggettoPerID.h"
 #include "headers/cercaOggettiPerCosto.h"
 #include "headers/soluzioneUno.h"
+#include "headers/soluzioneDue.h"
 
 #define MAX_OGGETTI 100
 
@@ -29,6 +30,7 @@ void menu() {
         printf("5. Cerca oggetto per ID\n");
         printf("6. Cerca oggetti con costo minore di un certo valore\n");
         printf("7. Soluzione Uno\n");
+        printf("8. Soluzione Due\n");
         printf("0. Esci\n");
         printf("Scegli un'opzione: ");
         scanf("%d", &scelta);
@@ -58,6 +60,9 @@ void menu() {
                 break;
             case 7:
                 soluzioneUno(lista_oggetti, n_oggetti, capac);
+                break;
+            case 8:
+                soluzioneDue(lista_oggetti, n_oggetti, capac, MAX_OGGETTI);
                 break;
             case 0:
                 break;
