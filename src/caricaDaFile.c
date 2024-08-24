@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h> 
 #include "../headers/oggetto.h"
 #include "../headers/aspettaEnter.h"
 
-void caricaDaFile(struct oggetto lista_oggetti[], int *n_oggetti, int *capac) {
+int caricaDaFile(struct oggetto lista_oggetti[], int *n_oggetti, int *capac) {
     char filename[50];
     FILE *file;
 
@@ -13,7 +14,7 @@ void caricaDaFile(struct oggetto lista_oggetti[], int *n_oggetti, int *capac) {
 
     if (file == NULL) {
         printf("Errore nell'apertura del file.\n");
-        return;
+        return 0;
     }
 
     fscanf(file, "%d %d", n_oggetti, capac);
@@ -24,5 +25,12 @@ void caricaDaFile(struct oggetto lista_oggetti[], int *n_oggetti, int *capac) {
 
     fclose(file);
     printf("Dati caricati con successo.\n");
+    
     aspettaEnter();
+
+    if (*n_oggetti > 0) {
+        return 1;
+    } else {
+        return 0;
+    }
 }

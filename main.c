@@ -19,6 +19,7 @@ struct oggetto lista_oggetti[MAX_OGGETTI];
 
 int n_oggetti = 0;
 int capac = 0;
+int oggetti_caricati = 0;
 
 void menu() {
     int scelta;
@@ -26,13 +27,15 @@ void menu() {
         printf("\nMenu:\n");
         printf("1. Inserisci oggetti da tastiera\n");
         printf("2. Carica oggetti da file\n");
-        printf("3. Visualizza oggetti\n");
-        printf("4. Trova oggetti con valore/costo massimo o minimo\n");
-        printf("5. Cerca oggetto per ID\n");
-        printf("6. Cerca oggetti con costo minore di un certo valore\n");
-        printf("7. Soluzione Uno\n");
-        printf("8. Soluzione Due\n");
-        printf("9. Soluzione Tre\n");
+        if(oggetti_caricati) {
+            printf("3. Visualizza oggetti\n");
+            printf("4. Trova oggetti con valore/costo massimo o minimo\n");
+            printf("5. Cerca oggetto per ID\n");
+            printf("6. Cerca oggetti con costo minore di un certo valore\n");
+            printf("7. Soluzione Uno\n");
+            printf("8. Soluzione Due\n");
+            printf("9. Soluzione Tre\n");
+        }
         printf("0. Esci\n");
         printf("Scegli un'opzione: ");
         scanf("%d", &scelta);
@@ -41,12 +44,13 @@ void menu() {
             case 1:
                  if (n_oggetti < MAX_OGGETTI) {
                     lista_oggetti[n_oggetti++] = inserisciOggetto(lista_oggetti, n_oggetti);
+                    oggetti_caricati = 1;
                 } else {
                     printf("Numero massimo di oggetti raggiunto.\n");
                 }
                 break;
             case 2:
-                caricaDaFile(lista_oggetti, &n_oggetti, &capac);
+                oggetti_caricati = caricaDaFile(lista_oggetti, &n_oggetti, &capac);
                 break;
             case 3:
                 visualizzaOggetti(lista_oggetti, n_oggetti);

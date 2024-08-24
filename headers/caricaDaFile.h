@@ -3,6 +3,6 @@
 
 struct oggetto;
 
-void caricaDaFile(struct oggetto lista_oggetti[], int *n_oggetti, int *capac);
+int caricaDaFile(struct oggetto lista_oggetti[], int *n_oggetti, int *capac);
 
 #endif
